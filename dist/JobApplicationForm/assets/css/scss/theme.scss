@@ -1,0 +1,79 @@
+@import './colors.scss';
+@import './headers/header.scss';
+@import './fonts/fonts.scss';
+@import './layout/layout.scss';
+@import './spaces/spaces.scss';
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+.form-select:focus,select:focus,.bootstrap-select:focus{ box-shadow: inset 0 -1px 0 #ddd;}
+
+
+a{
+  color: inherit;
+  text-decoration: none;
+  transition: all ease 0.1s;
+  &:hover, &:focus{
+      color: inherit;
+      text-decoration: none;
+      transition: all ease 0.1s;
+
+  }
+
+}
+*{
+  font-family: cairo;
+}
+
+@media print {
+  @page 
+  {
+      size: auto;   /* auto is the initial value */
+      justify-content: center !important;
+  }
+  body {
+    .container{
+      width: 100% !important;
+      margin-left:200px !important;
+      justify-content: center !important;
+    }
+
+  } 
+  header,footer,#buttons,#documents{
+    display: none !important;
+  }
+
+  #print-section, #print-section * {
+
+    visibility: visible;
+    font-family: cairo;
+    font-size:16px;
+
+  }
+  :host {
+    display: none;
+  }
+
+  #print-section {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 10px;
+
+  }
+
+}
